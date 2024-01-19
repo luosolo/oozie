@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<configuration>
+    <property>
+        <name>oozie.service.ProxyUserService.proxyuser.root.hosts</name>
+        <value>*</value>
+        <description>
+            List of hosts the '#USER#' user is allowed to perform 'doAs'
+            operations.
+            The '#USER#' must be replaced with the username o the user who is
+            allowed to perform 'doAs' operations.
+            The value can be the '*' wildcard or a list of hostnames.
+            For multiple users copy this property and replace the user name
+            in the property name.
+</description>
+    </property>
+    <property>
+        <name>oozie.service.ProxyUserService.proxyuser.root.groups</name>
+        <value>*</value>
+        <description>
+            List of groups the '#USER#' user is allowed to impersonate users
+            from to perform 'doAs' operations.
+            The '#USER#' must be replaced with the username o the user who is
+            allowed to perform 'doAs' operations.
+            The value can be the '*' wildcard or a list of groups.
+            For multiple users copy this property and replace the user name
+            in the property name.
+</description>
+    </property>
+    <property>
+        <name>oozie.service.HadoopAccessorService.hadoop.configurations</name>
+        <value>*=/opt/hadoop/etc/hadoop</value>
+    </property>
+    <property>
+        <name>oozie.service.HadoopAccessorService.action.configurations</name>
+        <value>*=/opt/hadoop/etc/hadoop</value>
+    </property>
+    <!-- <property>
+<name>oozie.service.WorkflowAppService.system.libpath</name>
+<value>hdfs:///user/${user.name}/share/lib;hdfs://namenode:8020</value>
+<description>
+System library path to use for workflow applications.
+This path is added to workflow application if their job properties sets
+the property 'oozie.use.system.libpath' to true.
+</description>
+</property> -->
+    <property>
+        <name>oozie.service.WorkflowAppService.system.libpath</name>
+        <value>/user/share/lib/</value>
+        <description>
+            System library path to use for workflow applications.
+            This path is added to workflow application if their job properties sets
+            the property 'oozie.use.system.libpath' to true.
+</description>
+    </property>
+</configuration>
