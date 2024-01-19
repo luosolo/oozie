@@ -1,6 +1,30 @@
 Apache Oozie
 =============
 
+About this fork
+--------------
+
+This is a fork of the 5.2.1 tag that compiles with Hadoop 3.3.6. It also defines the necessary steps to create the Dockerfile and a configuration for a development environment that includes:
+
+. Namenode
+. Datanode
+. Resourcemanager
+. Oozie
+
+#Compile
+> mvn clean package assembly:single -DskipTests -Dhadoop.version=3.3.6 -Dhadoop.majorversion=3 -Phadoop3,hadoop-3,uber,spark-2
+
+# Building the Dockerfile
+
+To build the Dockerfile, run the following command:
+
+> docker build -t bigflow:latest .
+
+This will create a Docker image named "__bigflow:latest__".
+
+
+
+
 What is Oozie
 --------------
 
